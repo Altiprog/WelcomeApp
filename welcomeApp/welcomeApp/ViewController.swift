@@ -8,12 +8,38 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //MARK: -
+    @IBOutlet weak var UserNameOut: UITextField!
+    
+    @IBOutlet weak var passwordOut: UITextField!
+    
+    @IBOutlet weak var loginOut: UIButton!
+    
+    
+    //MARK: -
+    
+    
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    
+    //MARK: -
+    @IBAction func logInPressed() {
     }
-
-
+    
+    @IBAction func forgotYourNamePressed() {
+    }
+    
+    @IBAction func forgotPasswordPressed() {
+    }
+    
+    
+    
+    
+    //MARK: -
 }
 
