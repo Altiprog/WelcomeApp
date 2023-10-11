@@ -7,15 +7,15 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class LoginViewController: UIViewController {
     //MARK: -
     @IBOutlet weak var UserNameOut: UITextField!
     @IBOutlet weak var passwordOut: UITextField!
     
     @IBOutlet weak var loginOut: UIButton!
     
-    let name = "Tim"
-    let password = "123"
+   private let user = User.getUser() 
+    
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +26,11 @@ final class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard UserNameOut.text == name, passwordOut.text == password else {
+        guard UserNameOut.text ==  user.person.name, passwordOut.text ==  user.password else {
             showAlert(with: "Oops", and: "Wrong Username or password", clear: (passwordOut))
             UserNameOut.text = ""
             return false
@@ -40,7 +40,7 @@ final class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let settingsVC = segue.destination as? WelcomeViewController {
-            settingsVC.receivedUserName = name
+            settingsVC.receivedUserName =  user.person.name
         }
     }
     
@@ -49,11 +49,11 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func forgotYourNamePressed() {
-        showAlert(with: "Oops!", and: "Your name is '\(name)' 😊", clear: UserNameOut)
+        showAlert(with: "Oops!", and: "Your name is '\( user.person.name)' 😊", clear: UserNameOut)
     }
     
     @IBAction func forgotPasswordPressed() {
-        showAlert(with: "Oops!", and: "Your password is  '\(password)' 😊 ", clear: passwordOut)
+        showAlert(with: "Oops!", and: "Your password is  '\( user.password)' 😊 ", clear: passwordOut)
     }
     
     @IBAction func unvind(for segue: UIStoryboardSegue) {
@@ -62,7 +62,7 @@ final class ViewController: UIViewController {
     }
 }
 //MARK: -
-extension ViewController {
+extension LoginViewController {
     
     private func showAlert(with title: String, and message: String, clear: UITextField) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
