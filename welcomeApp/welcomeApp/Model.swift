@@ -6,17 +6,14 @@
 //
 
 import Foundation
-
-
+import QuartzCore
 
 struct User {
-    
     let login: String
     let password: String
     let person: Person
     
     static func getUser() -> User {
-        
         User(
             login: "Tim",
             password: "123",
@@ -31,13 +28,10 @@ struct User {
                 position: "SEO",
                 departmant: "main")
         )
-        
-        
     }
 }
 
 struct Person {
-    
     let name: String
     let surname: String
     let photo: String
@@ -46,5 +40,7 @@ struct Person {
     let position: String
     let departmant: String
 }
+
+
 
 

@@ -85,7 +85,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sHh-iY-9rn" secondAttribute="trailing" constant="20" id="C06-pK-SVN"/>
                             <constraint firstItem="sHh-iY-9rn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CXq-B0-iga"/>
@@ -111,9 +111,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milky" translatesAutoresizingMaskIntoConstraints="NO" id="bHK-34-rL4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="96" translatesAutoresizingMaskIntoConstraints="NO" id="Ifv-zF-0KG">
                                 <rect key="frame" x="20" y="94.5" width="335" height="478.5"/>
                                 <subviews>
@@ -145,22 +142,18 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LST-4X-U5j"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bHK-34-rL4" firstAttribute="leading" secondItem="LST-4X-U5j" secondAttribute="leading" id="67x-F3-ut1"/>
-                            <constraint firstItem="bHK-34-rL4" firstAttribute="bottom" secondItem="LST-4X-U5j" secondAttribute="bottom" id="EGy-Uz-dLi"/>
                             <constraint firstItem="Ifv-zF-0KG" firstAttribute="centerX" secondItem="VYQ-U8-QOn" secondAttribute="centerX" id="OOG-Vd-BB6"/>
                             <constraint firstItem="Ifv-zF-0KG" firstAttribute="centerY" secondItem="VYQ-U8-QOn" secondAttribute="centerY" id="USo-9x-LBt"/>
-                            <constraint firstItem="bHK-34-rL4" firstAttribute="trailing" secondItem="LST-4X-U5j" secondAttribute="trailing" id="Uu5-bD-rhe"/>
                             <constraint firstItem="LST-4X-U5j" firstAttribute="trailing" secondItem="Ifv-zF-0KG" secondAttribute="trailing" constant="20" id="Xnu-sh-4kN"/>
-                            <constraint firstItem="bHK-34-rL4" firstAttribute="top" secondItem="LST-4X-U5j" secondAttribute="top" id="np8-x2-vuo"/>
                             <constraint firstItem="Ifv-zF-0KG" firstAttribute="leading" secondItem="LST-4X-U5j" secondAttribute="leading" constant="20" id="ssJ-Wn-snJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Welcome" image="rectangle.inset.filled.and.person.filled" catalog="system" id="mSc-aJ-tYi"/>
                     <navigationItem key="navigationItem" id="FT8-mX-w3P"/>
                     <connections>
-                        <outlet property="lableOut" destination="aqJ-cy-f2f" id="qiR-Bv-Iyx"/>
+                        <outlet property="lableAut" destination="aqJ-cy-f2f" id="qiR-Bv-Iyx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFh-DA-yTj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -275,7 +268,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UF2-ia-hJP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UF2-ia-hJP" firstAttribute="trailing" secondItem="5Oi-Bj-jPT" secondAttribute="trailing" constant="16" id="59m-pr-t8E"/>
                             <constraint firstItem="5Oi-Bj-jPT" firstAttribute="leading" secondItem="UF2-ia-hJP" secondAttribute="leading" constant="16" id="8AQ-Mx-uId"/>
@@ -378,7 +371,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="milky" width="1920" height="1080"/>
         <image name="person.fill.questionmark" catalog="system" width="128" height="102"/>
         <image name="rectangle.inset.filled.and.person.filled" catalog="system" width="128" height="89"/>
         <namedColor name="AccentColor">
@@ -389,9 +381,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

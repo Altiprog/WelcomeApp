@@ -14,14 +14,19 @@ final class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginOut: UIButton!
     
-   private let user = User.getUser() 
+    private let user = User.getUser()
     
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginOut.layer.cornerRadius = 10
+        let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.gray.cgColor]
+            gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         
+        loginOut.layer.cornerRadius = 10
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,11 +44,15 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let settingsVC = segue.destination as? WelcomeViewController {
-            settingsVC.receivedUserName =  user.person.name
+        if let tabBarController = segue.destination as? UITabBarController,
+           let viewControllers = tabBarController.viewControllers {
+            for viewController in viewControllers {
+                if let welcomeViewController = viewController as? WelcomeViewController {
+                    welcomeViewController.receivedUserName = "\(user.person.name) \(user.person.surname)"
+                }
+            }
         }
     }
-    
     //MARK: -
     @IBAction func logInPressed() {
     }
